@@ -2,8 +2,10 @@
 
 ## 📌 Project Overview
 
-This project implements multiple **Siamese Network architectures** to detect duplicate questions using the **Quora Question Pairs dataset**.
-It leverages **word embeddings (GloVe 100d)**, **LSTM/ BiLSTM/ CNN/ Transformer-based feature extractors**, and provides evaluation with visualization, class balancing, and deployment-ready models.
+This project implements multiple **Siamese Network architectures** to detect duplicate questions using the **Quora
+Question Pairs dataset**.
+It leverages **word embeddings (GloVe 100d)**, **LSTM/ BiLSTM/ CNN/ Transformer-based feature extractors**, and provides
+evaluation with visualization, class balancing, and deployment-ready models.
 
 ---
 
@@ -11,12 +13,13 @@ It leverages **word embeddings (GloVe 100d)**, **LSTM/ BiLSTM/ CNN/ Transformer-
 
 ### 1. Environment Setup
 
-* Imported all required libraries: `tensorflow`, `keras`, `sklearn`, `matplotlib`, `seaborn`, `pandas`, `numpy`, `gradio`, etc.
+* Imported all required libraries: `tensorflow`, `keras`, `sklearn`, `matplotlib`, `seaborn`, `pandas`, `numpy`,
+  `gradio`, etc.
 * Defined constants:
 
-  * `SENTENCE_MAX_WORDS_LEN = 35`
-  * `EMBEDDING_DIM = 100`
-  * Training params: `EPOCHS=20`, `BATCH_SIZE=1012`.
+    * `SENTENCE_MAX_WORDS_LEN = 35`
+    * `EMBEDDING_DIM = 100`
+    * Training params: `EPOCHS=20`, `BATCH_SIZE=1012`.
 
 ---
 
@@ -32,8 +35,8 @@ It leverages **word embeddings (GloVe 100d)**, **LSTM/ BiLSTM/ CNN/ Transformer-
 
 * Cleaned text using regex:
 
-  * Lowercasing, removing symbols.
-  * Added spacing between numbers & text (e.g., `12cm → 12 cm`).
+    * Lowercasing, removing symbols.
+    * Added spacing between numbers & text (e.g., `12cm → 12 cm`).
 * Removed **NaN values** and **duplicates**.
 * Applied **max length filtering** (≤ 35 words).
 * Tokenized questions using `Tokenizer`.
@@ -55,9 +58,9 @@ It leverages **word embeddings (GloVe 100d)**, **LSTM/ BiLSTM/ CNN/ Transformer-
 
 * Split into **Train / Validation / Test** sets with ratios:
 
-  * Train: 60%
-  * Val: 20%
-  * Test: 20%
+    * Train: 60%
+    * Val: 20%
+    * Test: 20%
 * Applied **class weights** to handle imbalanced classes.
 
 ---
@@ -101,9 +104,9 @@ Each model is wrapped in a **CustomModel class** for:
 
 * Implemented **Gradio App** for interactive predictions:
 
-  * Select model from dropdown.
-  * Input two sentences.
-  * Output: Prediction (duplicate or not) with probability.
+    * Select model from dropdown.
+    * Input two sentences.
+    * Output: Prediction (duplicate or not) with probability.
 * Saved each model in `.keras` format for production use.
 * Saved tokenizer in `x_tokenizer.pkl`.
 
@@ -134,12 +137,12 @@ Below are paths where screenshots/plots can be placed:
 
 ### Model Architectures
 
-* ![](images/ma1.png)
-* ![](images/ma2.png)
-* ![](images/ma3.png)
-* ![](images/ma4.png)
-* ![](images/ma5.png)
-* ![](images/ma6.png)
+* ![deep_bi_lstm_se_v1_arch](images/deep_bi_lstm_se_v1_arch.png)
+* ![deep_bi_lstm_v1_arch](images/deep_bi_lstm_v1_arch.png)
+* ![deep_lstm_v1_arch](images/deep_lstm_v1_arch.png)
+* ![encoder_based_v1_arch](images/encoder_based_v1_arch.png)
+* ![shallow_lstm_v1_arch](images/shallow_lstm_v1_arch.png)
+* ![shallow_lstm_v2_arch](images/shallow_lstm_v2_arch.png)
 
 ### Training Loss Comparison
 
@@ -167,27 +170,3 @@ Below are paths where screenshots/plots can be placed:
 * ![](images/gui2.png)
 * ![](images/gui3.png)
 * ![](images/gui4.png)
-
----
-
-## 🚀 How to Run
-
-1. Clone repository and install dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Run the training pipeline:
-
-   ```bash
-   python train.py
-   ```
-3. Launch the Gradio demo:
-
-   ```bash
-   python app.py
-   ```
-4. Models and results are stored in:
-
-   * `train_cache/` (weights & histories)
-   * `deployments/` (saved models, tokenizer, results)
