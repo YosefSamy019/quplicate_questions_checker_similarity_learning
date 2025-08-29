@@ -137,12 +137,29 @@ Below are paths where screenshots/plots can be placed:
 
 ### Model Architectures
 
-* ![deep_bi_lstm_se_v1_arch](images/deep_bi_lstm_se_v1_arch.png)
-* ![deep_bi_lstm_v1_arch](images/deep_bi_lstm_v1_arch.png)
-* ![deep_lstm_v1_arch](images/deep_lstm_v1_arch.png)
-* ![encoder_based_v1_arch](images/encoder_based_v1_arch.png)
-* ![shallow_lstm_v1_arch](images/shallow_lstm_v1_arch.png)
-* ![shallow_lstm_v2_arch](images/shallow_lstm_v2_arch.png)
+<p align="center">
+  <img src="images/deep_bi_lstm_se_v1_arch.png" alt="deep_bi_lstm_se_v1_arch" width="400"/>
+</p>
+
+<p align="center">
+  <img src="images/deep_bi_lstm_v1_arch.png" alt="deep_bi_lstm_v1_arch" width="400"/>
+</p>
+
+<p align="center">
+  <img src="images/deep_lstm_v1_arch.png" alt="deep_lstm_v1_arch" width="400"/>
+</p>
+
+<p align="center">
+  <img src="images/encoder_based_v1_arch.png" alt="encoder_based_v1_arch" width="400"/>
+</p>
+
+<p align="center">
+  <img src="images/shallow_lstm_v1_arch.png" alt="shallow_lstm_v1_arch" width="400"/>
+</p>
+
+<p align="center">
+  <img src="images/shallow_lstm_v2_arch.png" alt="shallow_lstm_v2_arch" width="400"/>
+</p>
 
 ### Training Loss Comparison
 
